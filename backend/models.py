@@ -1,6 +1,11 @@
 from pydantic import BaseModel
 
 
-class User(BaseModel):
-    name: str
-    
+class Cpu(BaseModel):
+    model: str
+    PTS1: float
+    PTS2: float
+    PTS4: float
+    PTS8: float
+    PTS64: float
+    samples: int

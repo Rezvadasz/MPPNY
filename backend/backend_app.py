@@ -14,21 +14,25 @@ def get_db_connection():
     return con
 
 
-
-@app.post("/user/add")
-async def add_user(user: models.User):
-    conn = get_db_connection()
-    cur = conn.cursor()
-    cur.execute("INSERT INTO user (name) VALUES (?)", (user.name,))
-    conn.commit()
-    return "DONE!"
-    
-
-
-@app.get("/user/get")
+@app.get("/cpu/get")
 async def root():
     conn = get_db_connection()
     cur = conn.cursor()
-    res = cur.execute("SELECT id, name FROM user")
-    return res
+    res = cur.execute("SELECT * FROM cpu LIMIT 10")
+    cpus = res.fetchall()
+    return {"cpu": [dict(cpu) for cpu in cpus]}
 
+@app.post("/cpu/add")
+async def add_cpu(cpu: models.Cpu):
+    conn = get_db_connection()
+    cur = conn.cursor()
+    cur.execute("INSERT INTO cpu (Model, PTS1, PTS2, PTS4, PTS8, PTS64, Samples) VALUES (?,?,?,?,?,?,?)", (cpu.model, cpu.PTS1, cpu.PTS2, cpu.PTS4, cpu.PTS8, cpu.PTS64, cpu.samples))
+    conn.commit()
+    
+
+@app.delete("/cpu/delete/{cpu_id}")
+async def delete_cpu(cpu_id: int):
+    conn = get_db_connection()
+    cur = conn.cursor()
+    cur.execute("DELETE FROM cpu WHERE id = ?", (cpu_id,))
+    conn.commit()
