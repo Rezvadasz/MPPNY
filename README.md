@@ -1,4 +1,12 @@
-# Multi paradigmás programozási nyelvek
+# 
+
+Ez a projekt egy egyszerű AMD proceszor teljesítmény listázó
+
+## Fő funkciók
+
+-  **Lokális adatbázisban tárolja a benchmark erdeményeket (UserBenchmark)**
+-  **Összehasonlítsa a 1ö legjobb erdedményét single és multicore teljesítmény alapján egy grafikon segítségével**
+-  **Megjeleníti a fris amd híreket BeautifulSoup segítségével a TechPoerUp nevü oldalról**
 
 ## Telepítés és futtatás
 ### Virtuális környezet létrehozása
@@ -15,7 +23,7 @@ CREATE_venv.bat
 START_backend.bat
 ```
 > [!NOTE]
-> Elindít egy Uvicorn servert ami a FastAPI működéséhez kell.
+> Elindít egy Uvicorn szervert ami a FastAPI működéséhez kell.
 
 2. Frontend
 ``` bash
@@ -23,4 +31,14 @@ START_frontend.bat
 ```
 > [!NOTE]
 > Elindít egy Streamlit webes felületet.
+
+## Használt technológiák
+
+-   **Python 3**
+-   **FastAPI** -- REST backend
+-   **Uvicorn** -- ASGI szerver
+-   **Streamlit** -- frontend webes felület
+-   **requests + BeautifulSoup** -- web scraping
+
+
 
