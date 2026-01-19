@@ -39,6 +39,7 @@ START_frontend.bat
 -   **Uvicorn** -- ASGI szerver
 -   **Streamlit** -- frontend webes felület
 -   **requests + BeautifulSoup** -- web scraping
+-   **SqLite** -- Adatbázis
 
 
 
