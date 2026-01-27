@@ -6,7 +6,7 @@ Ez a projekt egy egyszerű AMD proceszor teljesítmény listázó
 
 -  **Lokális adatbázisban tárolja a benchmark erdeményeket (UserBenchmark)**
 -  **Összehasonlítsa a 10 legjobb erdedményét single és multicore teljesítmény alapján egy grafikon segítségével**
--  **Megjeleníti a fris amd híreket BeautifulSoup segítségével a TechPoerUp nevü oldalról**
+-  **Megjeleníti a friss AMD híreket BeautifulSoup segítségével a TechPoerUp nevü oldalról**
 
 ## Telepítés és futtatás
 ### Virtuális környezet létrehozása
