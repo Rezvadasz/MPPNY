@@ -1,16 +1,21 @@
+import os
 import requests
 import streamlit as st
 import pandas as pd
 import plotly.graph_objects as go
 from bs4 import BeautifulSoup
+from dotenv import load_dotenv
 
 
 
-BACKEND_ADDRESS = "http://127.0.0.1:8000"
-NEWS_URL = "https://www.techpowerup.com/news-tags/AMD"
+load_dotenv()
+
+BACKEND_ADDRESS = os.getenv('BACKEND_ADDRESS')
+NEWS_URL = os.getenv('NEWS_URL')
+
+
 
 st.header("AMD CPU Benchmarks") 
-
 st.subheader("List CPU")
 
 
